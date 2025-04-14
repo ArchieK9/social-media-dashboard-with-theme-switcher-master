@@ -1,0 +1,346 @@
+/* 
+
+## Colors
+
+### Primary
+
+- Lime Green: hsl(163, 72%, 41%)
+- Bright Red: hsl(356, 69%, 56%)
+
+- Facebook: hsl(208, 92%, 53%)
+- Twitter: hsl(203, 89%, 53%)
+- Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%)
+- YouTube: hsl(348, 97%, 39%)
+
+#### Dark Theme
+
+- Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%)
+
+#### Light Theme
+
+- Toggle: hsl(230, 22%, 74%)
+
+### Neutral
+
+#### Dark Theme
+
+- Very Dark Blue (BG): hsl(230, 17%, 14%)
+- Very Dark Blue (Top BG Pattern): hsl(232, 19%, 15%)
+- Dark Desaturated Blue (Card BG): hsl(228, 28%, 20%)
+- Desaturated Blue (Text): hsl(228, 34%, 66%)
+- White (Text): hsl(0, 0%, 100%)
+
+#### Light Theme
+
+- White (BG): hsl(0, 0%, 100%)
+- Very Pale Blue (Top BG Pattern): hsl(225, 100%, 98%)
+- Light Grayish Blue (Card BG): hsl(227, 47%, 96%)
+- Dark Grayish Blue (Text): hsl(228, 12%, 44%)
+- Very Dark Blue (Text): hsl(230, 17%, 14%)
+
+## Typography
+
+### Body Copy
+
+- Font size (Overview Card Headings): 14px
+
+### Font
+
+- Family: [Inter](https://fonts.google.com/specimen/Inter)
+- Weights: 400, 700
+
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+:root{
+    --Lime-Green: hsl(163, 72%, 41%);
+    --Bright-Red: hsl(356, 69%, 56%);
+    --Facebook: hsl(208, 92%, 53%);
+    --Twitter: hsl(203, 89%, 53%);
+    --YouTube: hsl(348, 97%, 39%);
+
+    /* LINEAR GRADIENTSTARTS */
+    --Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
+
+    --Dark-Theme-Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+    /* LINEAR GRADIENT STOPS */
+
+    --Light-Theme-Toggle: hsl(230, 22%, 74%);
+
+    /* #### Dark Theme */
+
+    --Very-Dark-Blue-BG: hsl(230, 17%, 14%);
+    --Very-Dark-Blue-Top-BG-Pattern: hsl(232, 19%, 15%);
+    --Dark-Desaturated-Blue-Card-BG: hsl(228, 28%, 20%);
+    --Desaturated-Blue-Text: hsl(228, 34%, 66%);
+    --White-Text: hsl(0, 0%, 100%);
+
+    /* #### Light Theme */
+
+    --White-BG: hsl(0, 0%, 100%);
+    --Very-Pale-Blue-Top-BG-Pattern: hsl(225, 100%, 98%);
+    --Light-Grayish-Blue-Card-BG: hsl(227, 47%, 96%);
+    --Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
+    --Very-Dark-Blue-Text: hsl(230, 17%, 14%);
+
+    ---family: 'Inter', sans-serif;
+}
+
+body{
+    background-color: var(--Very-Dark-Blue-BG);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(---family);
+    font-weight: 700;
+}
+
+/* ARBITRARY CLASSES */
+
+.left{
+    transform: translateX(100%);
+}
+
+.light-theme .absolute{
+    background-color: var(--Very-Pale-Blue-Top-BG-Pattern);
+}
+
+.light-theme .toggle-cont{
+    background: var(--Light-Theme-Toggle);
+}
+
+.light-theme p {
+    color: var(--Dark-Grayish-Blue-Text);
+}
+  
+.light-theme .stats,
+.light-theme .overviews {
+    background-color: var(--Light-Grayish-Blue-Card-BG);
+}
+  
+.light-theme {
+    background-color: var(--White-BG);
+}
+
+.light-theme h1, .light-theme h2{
+    color: var(--Very-Dark-Blue-Text);
+}
+
+/* ARBITRARY CLASSES */
+
+.absolute{
+    top: 0;
+    background-color: var(--Very-Dark-Blue-Top-BG-Pattern);
+    width: 100%;
+    height: 45%;
+    position: absolute;
+    z-index: -1;
+    border-bottom-right-radius: 2.5rem;
+    border-bottom-left-radius: 2.5rem;
+}
+
+main, section, header{
+    padding: 0 12.5%;
+    box-sizing: border-box;
+}
+
+h1, h2{
+    color: var(--White-Text);
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--Desaturated-Blue-Text);
+}
+
+header>div:nth-child(2){
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.toggle-cont{
+    width: 3.5rem;
+    background: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+    height: auto;
+    position: relative;
+    border-radius: 5rem;
+    padding: .2rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-cont:hover{
+    cursor: pointer;
+}
+
+.toggle-cont>button{
+    height: 1.5rem;
+    width: 50%;
+    position: relative;
+    border: none;
+    border-radius: 100%;
+    background-color: var(--Very-Dark-Blue-Top-BG-Pattern);
+    transition: transform 0.3s ease; 
+}
+
+main{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+main>div{
+    background-color: var(--Dark-Desaturated-Blue-Card-BG);
+    flex: 1 1;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    border-top-style: solid;
+    border-top-width: .5rem;
+    align-items: center;
+    color: var(--Desaturated-Blue-Text);
+}
+
+main>div:hover, section>div>div:hover{
+    cursor: pointer;
+    background-color: var(--Dark-Grayish-Blue-Text);
+    transition: .3s ease;
+}
+
+main>div>span{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+main>div>span:last-child{
+    color: var(--Lime-Green);
+}
+
+.youtube>span:last-child{
+    color: var(--Bright-Red);
+}
+
+main>div>p{
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.facebook{
+    border-top-color: var(--Facebook);
+}
+
+.twitter{
+    border-top-color: var(--Twitter);
+}
+
+.youtube{
+    border-top-color: var(--YouTube);
+}
+
+.instagram{
+    position: relative;
+}
+
+.instagram::before{
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    content: "";
+    position: absolute;
+    top: -.5rem;
+    left: 0;
+    width: 100%;
+    height: .5rem;
+    background: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+}
+
+section{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    color: var(--Desaturated-Blue-Text);
+}
+
+section>h1{
+    margin-bottom: 3rem;
+}
+
+section>div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+section>div>div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    border-radius: .5rem;
+    width: calc(25% - 2rem);
+    background-color: var(--Dark-Desaturated-Blue-Card-BG);
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+section>div>div>div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section>div>div>div>span{
+    display: flex;
+    align-items: center;
+    gap: .2rem;
+    color: var(--Lime-Green);
+}
+
+.Facebook-Likes>div>span, .Youtube-Likes>div>span, .Youtube-Total-Views>div>span{
+    color: var(--Bright-Red);
+}
+
+.attribution{
+    width: 100%;
+    text-align: center;
+    color: var(--Desaturated-Blue-Text);
+}
+
+
+@media(max-width:425px){
+
+    header>div:nth-child(2) {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    section>div{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+
+    section>div>div{
+        width: 100%;
+    }
+    
+    section>div>div>div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}
